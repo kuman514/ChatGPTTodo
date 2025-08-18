@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  color: black;
+  background-color: white;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  display: flex;
+  height: 100dvh;
+  width: 100vw;
+}
+
+.sidebar {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  border-right: solid 1px black;
+}
+
+.todo-list {
+  flex: 1;
+  overflow-y: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.todo-list li {
+  padding: 10px;
+}
+
+.todo-list li + li {
+  border-top: solid 1px black;
+}
+
+.todo-list li:hover {
+  cursor: pointer;
+  background-color: skyblue;
+}
+
+.add-todo-btn {
+  width: 300px;
+  height: 60px;
+  border-top: solid 1px black;
+  font-weight: 600;
+}
+
+.add-todo-btn:hover {
+  background-color: green;
+  color: white;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* 빈 화면 */
+.empty-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* 열람 모드 */
+.view-mode h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.view-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.view-buttons button {
+  border: solid 1px black;
+  padding: 8px 16px;
+}
+
+.edit-btn:hover {
+  background-color: yellow;
+}
+
+.delete-btn {
+  background-color: red;
+  color: white;
+}
+
+/* 폼 */
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 5px;
+  border: solid 1px black;
+  font-size: 1rem;
+}
+
+.confirm-btn {
+  border: solid 1px black;
+  padding: 8px 16px;
+}
+
+.confirm-btn:hover {
+  background-color: green;
+  color: white;
+}

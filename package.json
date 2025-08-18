@@ -1,0 +1,12 @@
+{
+  "name": "chat-gpt-todo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite"
+  },
+  "devDependencies": {
+    "vite": "^7.1.2"
+  }
+}
