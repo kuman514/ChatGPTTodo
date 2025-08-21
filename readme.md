@@ -1,16 +1,13 @@
 # ChatGPTTodo
-
 ChatGPT를 활용하여 할일(Todo) 앱을 만들어보는, AI 활용 코딩 연습 레포지토리.
 
 ## 이전까지의 AI 활용 현황
-
 - 개발 중 문제가 발생했을 때, 문제의 원인이 되는 근원을 알아냈지만 검색을 통해 알아낸 어떠한 방법으로도 해결이 되지 않을 때 ChatGPT를 활용했다.
 - 이 때, ChatGPT는 어떤 방향으로 문제를 해결할지를 제공하는 거시적인 이정표 역할을 하며, 나머지 세부적인 부분은 내가 직접 한다.
 - 가끔씩 ChatGPT가 아닌 Claude Sonnet 4에 물어볼 땐 세부적인 코드까지 작성해주곤 하는데, 여기서도 역시 거시적인 이정표로써 참고만 할 뿐이며, 혹시 잘못된 부분이 발견되면 내가 피드백을 주기도 한다.
   - 대표적으로, Tanstack Query를 이용한 무한 스크롤 구현을 Claude Sonnet 4에 물어봤을 때, Claude Sonnet 4가 useInfiniteQuery가 아닌 useQuery + useState를 사용한 코드를 출력하던 일이 있었다.
 
 ## Free Plan의 ChatGPT에게 요청한 내용
-
 ```
 혹시 할일 리스트 앱을 만들어줄 수 있어?
 
@@ -91,7 +88,6 @@ ChatGPT를 활용하여 할일(Todo) 앱을 만들어보는, AI 활용 코딩 �
 ```
 
 ## 추가적으로 요청한 메시지
-
 ```
 - renderContent의 state.mode에 대한 분기와 bindContentEvents의 form.addEventListener의 state.mode에 대한 분기는 if문이 아닌 switch-case문으로 해줘.
 - bindEvents는 초기에만 바인딩하니, initiallyBindEvents로 재명명해줘.
@@ -102,24 +98,19 @@ ChatGPT를 활용하여 할일(Todo) 앱을 만들어보는, AI 활용 코딩 �
 ```
 
 ## 대화 내역 (OpenAI 로그인 필요)
-
 https://chatgpt.com/share/68a39066-fa14-8013-86d5-c4b3af29f2e9
 
 ## 직접 보정한 부분
-
 - `button` 공통 속성에 `display: flex; justify-content: center; align-items: center`를 적용.
 - CSS 스타일 중 `#edit-btn` 선택자를 `.edit-btn`으로 바꾸고, `renderContent`에서도 할일 열람 모드의 수정 버튼에 해당하는 엘리먼트의 `edit-btn`을 id가 아닌 class로 바꿈.
 - `renderContent`에서도 할일 열람 모드의 삭제 버튼에 해당하는 엘리먼트의 `delete-btn` id를 제거.
 - (이후에도 보정할 부분을 발견하면 직접 보정)
 
 ## 활용 후기
-
 - 코드 생성이 빠르기 때문에, 내가 할 일은 질문을 구상하고 AI가 생성한 코드를 검토하거나 보정하는 일뿐이기에, 생산성이 높아짐을 체감하였다.
 - 다만 AI가 내 의도에 더욱 가깝게 코드를 작성하게 하려면, 한 번에 전체적인 구조가 완성되게끔 가능한 모든 요구사항이 명확하게 정의된, 하나의 거대한 질문을 보내야 한다.
-
   - 기존에 하던 태스크 브레이크다운보다 더욱 세부적인 요구사항을 정의할 필요가 있다.
     - 예: 기존의 "버튼 구현하기" 태스크에서, "버튼의 레이아웃 정의" "버튼의 스타일 정의" "버튼의 동작 정의" 등등의 태스크로 더욱 잘게 쪼갠 다음, 태스크에서마다 각 항목이 어떠해야 하는지 자세하고 명확하게 묘사해야 한다.
   - 모듈이 어떻게 구성되는지 등등, 앱의 전체적인 구조와 각 기능에 대한 구조 등등을 정의해야 한다.
-
   - 코딩 방식, 컨벤션, 변수/함수명 네이밍 규칙 등등의 세부적인 룰도 규정해야 한다.
     - 예: div보단 HTML5의 시멘틱 태그를 선호하라 (특히 button), 하나의 변수값에 대한 여러 분기는 if 문이 아닌 switch-case 문으로 작성하라, var 대신 let/const를 사용하라 등등.
