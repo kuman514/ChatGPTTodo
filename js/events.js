@@ -1,11 +1,10 @@
-import { state, MODES } from './state.js';
 import { render } from './render.js';
+import { MODES, state } from './state.js';
 
 export function initiallyBindEvents() {
   document.getElementById('add-todo-btn').addEventListener('click', () => {
+    state.selectedId = -1;
     state.mode = MODES.CREATE;
-    state.form.title = '';
-    state.form.content = '';
     render();
   });
 

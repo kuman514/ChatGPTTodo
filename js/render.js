@@ -1,4 +1,4 @@
-import { state, MODES } from './state.js';
+import { MODES, state } from './state.js';
 import { saveTodos } from './storage.js';
 
 export function render() {
@@ -52,8 +52,6 @@ function renderContent() {
       editBtn.className = 'edit-btn';
       editBtn.addEventListener('click', () => {
         state.mode = MODES.EDIT;
-        state.form.title = todo.title;
-        state.form.content = todo.content;
         render();
       });
 
@@ -86,13 +84,18 @@ function renderContent() {
       const form = document.createElement('form');
       form.id = 'todo-form';
 
+      const initData = state.todos.find((t) => t.id === state.selectedId) ?? {
+        title: '',
+        content: '',
+      };
+
       const titleGroup = document.createElement('div');
       titleGroup.className = 'form-group';
       const titleLabel = document.createElement('label');
       titleLabel.textContent = '제목';
       const titleInput = document.createElement('input');
       titleInput.type = 'text';
-      titleInput.value = state.form.title;
+      titleInput.value = initData.title;
       titleInput.name = 'title';
       titleGroup.appendChild(titleLabel);
       titleGroup.appendChild(titleInput);
@@ -104,7 +107,7 @@ function renderContent() {
       const textarea = document.createElement('textarea');
       textarea.name = 'content';
       textarea.rows = 10;
-      textarea.value = state.form.content;
+      textarea.value = initData.content;
       contentGroup.appendChild(contentLabel);
       contentGroup.appendChild(textarea);
 

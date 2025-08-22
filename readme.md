@@ -104,6 +104,7 @@ https://chatgpt.com/share/68a39066-fa14-8013-86d5-c4b3af29f2e9
 - `button` 공통 속성에 `display: flex; justify-content: center; align-items: center`를 적용.
 - CSS 스타일 중 `#edit-btn` 선택자를 `.edit-btn`으로 바꾸고, `renderContent`에서도 할일 열람 모드의 수정 버튼에 해당하는 엘리먼트의 `edit-btn`을 id가 아닌 class로 바꿈.
 - `renderContent`에서도 할일 열람 모드의 삭제 버튼에 해당하는 엘리먼트의 `delete-btn` id를 제거.
+- 할일 폼의 전역 상태(`state.form`)를 제거하고, 생성/수정 시 할일 데이터를 불러올 때 `state.todos.find`를 활용.
 - (이후에도 보정할 부분을 발견하면 직접 보정)
 
 ## 활용 후기

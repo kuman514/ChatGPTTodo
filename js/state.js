@@ -9,8 +9,4 @@ export const state = {
   todos: [],
   selectedId: -1,
   mode: MODES.EMPTY,
-  form: {
-    title: '',
-    content: '',
-  },
 };
